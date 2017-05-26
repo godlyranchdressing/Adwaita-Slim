@@ -1,0 +1,75 @@
+// Builder
+
+window.workbench {
+  docktabstrip {
+    padding: 0px;
+    border-color: $borders_color;
+    border-width: 1px;
+    box-shadow: inset 0 -1px 0 0 $borders_color;
+    background-color: $dark_fill;
+
+    &:backdrop {
+      border-color: $backdrop_borders_color;
+      box-shadow: inset 0 -1px 0 0 $backdrop_borders_color;
+      background-color: $backdrop_dark_fill;
+    }
+  }
+
+  docktab {
+    min-height: 20px;
+    min-width: 20px;
+    padding: 1px 6px;
+    margin: 0;
+    outline-offset: -5px;
+    color: $insensitive_fg_color;
+    font-weight: bold;
+    border-width: 1px;
+
+    &:hover {
+      color: mix($insensitive_fg_color, $fg_color, 50%);
+    }
+
+    &:backdrop {
+      color: mix($backdrop_fg_color, $backdrop_bg_color, 60%);
+    }
+
+    &:checked {
+      color: $fg_color;
+
+      &:hover {
+        background-color: transparentize($bg_color, 0.3);
+      }
+    }
+
+    &:backdrop:checked {
+      color: $backdrop_fg_color;
+    }
+  }
+
+  popover{
+    label{
+      padding: 0 6px;
+    }
+  }
+
+  layouttabbar {
+    box-shadow: inset 0 -3px $selected_bg_color;
+
+    button {
+      &, &.popup.toggle{
+      @include button(undecorated);
+      border-radius: 0px;
+      padding: 2px 8px;
+
+      &:backdrop {
+        border: none;
+        background-image: none;
+        box-shadow: none;
+      }
+    }
+  }}
+
+  greeter frame {
+    border: 1px solid $borders_color;
+  }
+}

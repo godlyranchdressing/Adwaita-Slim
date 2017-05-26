@@ -1,0 +1,35 @@
+@mixin uniform_panel_spacing {
+  // Makes spacing between indicators and the aggregate menu uniform
+  #panelRight {
+    // seems to disable the upper right corner being a hotcorner -> maybe there's a better way to do this?
+    padding-right: 5px;
+  }
+
+  #panelRight .panel-button {
+    -natural-hpadding: 2px;
+    -minimum-hpadding: 2px;
+  }
+
+  .panel-status-indicators-box,
+  .panel-status-menu-box {
+    spacing: 4px;
+  }
+
+  #panelLeft, #panelCenter {
+    spacing: 4px;
+  }
+}
+
+@mixin shrink_dash_to_dock {
+  // Shrink the dash by reducing padding and border radius
+  #dashtodockContainer #dash,
+  #dashtodockContainer.dashtodock #dash {
+    border: 0;
+    padding: 0;
+  }
+
+  #dashtodockContainer .dash-item-container > StButton,
+  #dashtodockContainer.dashtodock .dash-item-container > StButton {
+    padding: 1px 2px;
+  }
+}
