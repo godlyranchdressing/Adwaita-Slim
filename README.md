@@ -1,10 +1,6 @@
 # Adwaita Slim
 This is Adwaita Slim. Nothing fancy.
 
-# Changes
-The Shell theme has no dropdown arrows in the top bar, more uniform indicator spacing and a smaller dash.
-The GTK2/3 themes have more compact buttons and entry buttons.
-
 ## Preview
 ![Image One](preview-1.png)
 ![Image Two](preview-2.png)

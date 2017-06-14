@@ -1,0 +1,10 @@
+[X-GNOME-Metatheme]
+Name=Adwaita Slim
+Type=X-GNOME-Metatheme
+Comment=Compact edition of Adwaita
+Encoding=UTF-8
+GtkTheme=Adwaita-slim
+MetacityTheme=Adwaita-slim
+IconTheme=Adwaita
+CursorTheme=Adwaita
+CursorSize=24
