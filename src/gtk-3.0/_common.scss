@@ -207,7 +207,7 @@ label {
     color: $insensitive_fg_color;
 
     selection {
-      @extend %selected_items:disabled;
+      @extend %selected_items, :disabled;
     }
 
     &:backdrop {
@@ -219,7 +219,7 @@ label {
     color: $backdrop_fg_color;
 
     selection {
-      @extend %selected_items:backdrop;
+      @extend %selected_items, :backdrop;
     }
   }
 }
@@ -1097,15 +1097,15 @@ toolbar.inline-toolbar toolbutton:backdrop {
   }
 
   &:first-child > button.flat {
-    @extend %linked:first-child;
+    @extend %linked, :first-child;
   }
 
   &:last-child > button.flat {
-    @extend %linked:last-child;
+    @extend %linked, :last-child;
   }
 
   &:only-child > button.flat {
-    @extend %linked:only-child;
+    @extend %linked, :only-child;
   }
 }
 
@@ -1277,7 +1277,7 @@ button:link,
 button:visited {
   @extend %undecorated_button;
 
-  @extend *:link;
+  @extend *, :link;
 
   text-shadow: none;
 
@@ -1539,11 +1539,11 @@ combobox {
   &.linked {
     button:nth-child(2) {
       &:dir(ltr) {
-        @extend %linked:last-child;
+        @extend %linked, :last-child;
       }
 
       &:dir(rtl) {
-        @extend %linked:first-child;
+        @extend %linked, :first-child;
       }
     }
   }
@@ -1553,7 +1553,7 @@ combobox {
     box-shadow: none;
 
     button.combo {
-      @extend %button_basic:drop(active);
+      @extend %button_basic, :drop(active);
     }
   }
 }
@@ -1572,15 +1572,15 @@ combobox {
 }
 
 .linked:not(.vertical) > combobox:first-child > box > button.combo {
-  @extend %linked:first-child;
+  @extend %linked, :first-child;
 }
 
 .linked:not(.vertical) > combobox:last-child > box > button.combo {
-  @extend %linked:last-child;
+  @extend %linked, :last-child;
 }
 
 .linked:not(.vertical) > combobox:only-child > box > button.combo {
-  @extend %linked:only-child;
+  @extend %linked, :only-child;
 }
 
 .linked.vertical > combobox > box > button.combo {
@@ -1588,15 +1588,15 @@ combobox {
 }
 
 .linked.vertical > combobox:first-child > box > button.combo {
-  @extend %linked_vertical:first-child;
+  @extend %linked_vertical, :first-child;
 }
 
 .linked.vertical > combobox:last-child > box > button.combo {
-  @extend %linked_vertical:last-child;
+  @extend %linked_vertical, :last-child;
 }
 
 .linked.vertical > combobox:only-child > box > button.combo {
-  @extend %linked_vertical:only-child;
+  @extend %linked_vertical, :only-child;
 }
 
 /************
@@ -1746,7 +1746,7 @@ headerbar {
       box-shadow: inset 0 1px mix($top_hilight, $selected_bg_color, 60%);
     }
 
-    .subtitle:link { @extend *:link:selected;  }
+    .subtitle:link { @extend *, :link, :selected;  }
 
     button {
       @include button(normal, $selected_bg_color, $selected_fg_color);
@@ -1904,8 +1904,8 @@ headerbar {
 
 headerbar { // headerbar border rounding
   window:not(.tiled):not(.maximized):not(.solid-csd) separator:first-child + &, // tackles the paned container case
-  window:not(.tiled):not(.maximized):not(.solid-csd) &:first-child { &:backdrop, & { border-top-left-radius: 7px; }}
-  window:not(.tiled):not(.maximized):not(.solid-csd) &:last-child { &:backdrop, & { border-top-right-radius: 7px; }}
+  window:not(.tiled):not(.maximized):not(.solid-csd) &:first-child { &:backdrop, & { border-top-left-radius: 4px; }}
+  window:not(.tiled):not(.maximized):not(.solid-csd) &:last-child { &:backdrop, & { border-top-right-radius: 4px; }}
   window:not(.tiled):not(.maximized):not(.solid-csd) stack & { // tackles the stacked headerbars case
     &:first-child, &:last-child {
       &:backdrop, & {
@@ -2548,7 +2548,7 @@ notebook {
     > tabs > arrow {
       @extend %button_basic;
 
-      @extend %button_basic.flat;
+      @extend %button_basic, .flat;
 
       min-height: 16px;
       min-width: 16px;
@@ -3615,7 +3615,7 @@ progressbar {
 
   trough { @extend %scale_trough; }
 
-  &:backdrop trough { @extend %scale_trough:backdrop; } // looks like states are not passed to the trough component here
+  &:backdrop trough { @extend %scale_trough, :backdrop; } // looks like states are not passed to the trough component here
 
   progress {
     @extend %scale_highlight;
@@ -3643,7 +3643,7 @@ progressbar {
     }
   }
 
-  &:backdrop progress { @extend %scale_highlight:backdrop; } // states not passed here as well
+  &:backdrop progress { @extend %scale_highlight, :backdrop; } // states not passed here as well
 
   &.osd { // progressbar.osd used for epiphany page loading progress
     min-width: 3px;
@@ -4137,9 +4137,9 @@ placessidebar {
     }
 
     @at-root button.sidebar-button {
-      @extend %button_basic.flat;
+      @extend %button_basic, .flat;
 
-      @extend %button_selected.flat;
+      @extend %button_selected, .flat;
 
       min-height: 26px;
       min-width: 26px;
@@ -4598,12 +4598,12 @@ decoration {
 button.titlebutton {
   @extend %button_basic;
 
-  @extend %button_basic.flat;
+  @extend %button_basic, .flat;
 
   @include _button_text_shadow;
 
   .selection-mode & {
-    @extend %button.flat.suggested-action;
+    @extend %button, .flat, .suggested-action;
 
     @extend %nobg_selected_items;
   }
