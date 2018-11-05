@@ -73,3 +73,35 @@ window.workbench {
     border: 1px solid $borders_color;
   }
 }
+
+
+// Nautilus
+
+window.nautilus-window {
+  .path-bar-box {
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $borders_color;
+    background-color: $bg_color;
+  }
+
+  .path-bar > box > button {
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 0;
+    border-width: 0;
+    margin: 1px 2px 2px 2px;
+    padding: 1px;
+
+    &:hover {
+      box-shadow: 0 -3px $borders_color inset;
+      background-image: none;
+    }
+
+    &:active,
+    &:checked {
+      background-image: none;
+    }
+  }
+}
