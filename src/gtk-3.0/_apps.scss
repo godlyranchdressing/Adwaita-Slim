@@ -78,7 +78,7 @@ window.workbench {
 // Nautilus
 
 window.nautilus-window {
-  .path-bar-box {
+  .path-bar-box.width-maximized {
     border-radius: 2px;
     border-width: 1px;
     border-style: solid;
