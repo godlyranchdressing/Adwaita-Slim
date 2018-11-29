@@ -16,7 +16,7 @@ for variant in "","" "-Dark","-dark"; do
   if [ $1="-Dark" ];
     then
         sassc -t expanded src/gtk-3.0/gtk-dark.scss $OUTPUT/$THEME-Dark/gtk-3.0/gtk.css
-        cp src/gtk-3.0/assets/*dark* $OUTPUT/$THEME-Dark/gtk-3.0/assets
+        cp src/gtk-3.0/assets/* $OUTPUT/$THEME-Dark/gtk-3.0/assets
         cp src/gtk-2.0/common-files/* $OUTPUT/$THEME-Dark/gtk-2.0/
         cp src/gtk-2.0/dark-variant-files/* $OUTPUT/$THEME-Dark/gtk-2.0/
         cp src/gtk-2.0/assets/dark-assets/* $OUTPUT/$THEME-Dark/gtk-2.0/assets
