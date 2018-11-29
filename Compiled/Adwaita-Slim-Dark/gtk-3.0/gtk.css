@@ -6888,7 +6888,7 @@ window.workbench greeter frame {
   border: 1px solid #1b1f20;
 }
 
-window.nautilus-window .path-bar-box {
+window.nautilus-window .path-bar-box.width-maximized {
   border-radius: 2px;
   border-width: 1px;
   border-style: solid;
